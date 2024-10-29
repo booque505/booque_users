@@ -1,3 +1,4 @@
+import 'package:booque_users/modules/scanqr/scanqr.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/utils/colorstyles.dart';
@@ -38,9 +39,18 @@ class ScanBar extends StatelessWidget {
               const SizedBox(
                 width: 5,
               ),
-              Icon(
-                Icons.qr_code_scanner,
-                color: colorStyles.orange,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ScanQr(),
+                      ));
+                },
+                child: Icon(
+                  Icons.qr_code_scanner,
+                  color: colorStyles.orange,
+                ),
               )
             ],
           )

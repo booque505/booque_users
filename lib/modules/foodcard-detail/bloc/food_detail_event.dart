@@ -14,3 +14,15 @@ class PortionEvent extends FoodDetailEvent {
 
   PortionEvent({required this.chosenPortion});
 }
+
+class AddAmountEvent extends FoodDetailEvent{
+  int amount = 0;
+
+  AddAmountEvent({required this.amount});
+}
+
+class SubtractAmountEvent extends FoodDetailEvent{
+  int amount = 0;
+
+  SubtractAmountEvent({required this.amount});
+}

@@ -1,6 +1,8 @@
 import 'package:booque_users/core/utils/colorstyles.dart';
 import 'package:booque_users/core/utils/textstyles.dart';
 import 'package:booque_users/modules/foodcard-detail/bloc/food_detail_bloc.dart';
+import 'package:booque_users/modules/foodcard-detail/components/add_item.dart';
+import 'package:booque_users/modules/foodcard-detail/components/amount_button.dart';
 import 'package:booque_users/modules/foodcard-detail/components/category_chip.dart';
 import 'package:booque_users/modules/foodcard-detail/components/chip_section.dart';
 import 'package:booque_users/modules/foodcard-detail/components/description.dart';
@@ -104,77 +106,13 @@ class FoodcardDetailScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        alignment: Alignment.centerLeft,
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  color: colorStyles.orange,
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: const Icon(
-                                Icons.remove,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: Text(
-                                "5",
-                                style: textStyles.regular12,
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  color: colorStyles.orange,
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: const Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                        child: AmountButton(
+                      amount: 0,
+                    )),
                     const SizedBox(
                       width: 20,
                     ),
-                    Expanded(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 15),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: colorStyles.orange),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Tambah",
-                                style: textStyles.regular12
-                                    .copyWith(color: Colors.white),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "Rp 25.000",
-                                style: textStyles.regular12
-                                    .copyWith(color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
+                    const Expanded(child: AddItem())
                   ],
                 ),
               ),
